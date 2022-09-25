@@ -1,0 +1,166 @@
+<nav>
+  <div>
+    <!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid justify-content-between">
+    <!-- Left elements -->
+    <div class="d-flex">
+      <!-- Brand -->
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <img
+          src="images/DB of Games Logo.png"
+          height="30"
+          alt="MDB Logo"
+          loading="lazy"
+          style="margin-top: 2px;"
+        />
+      </a>
+
+      <!-- Search form -->
+      
+    </div>
+    <!-- Left elements -->
+
+   
+    <h3>User Page</h1>
+    <!-- Right elements -->
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <img
+            data-toggle="tooltip" title="User" 
+            src="https://image.shutterstock.com/image-vector/admin-business-icon-businessman-people-260nw-2198670565.jpg"
+            class="rounded-circle"
+            height="22"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+          <strong data-toggle="tooltip" title="User : {{user.fname}} {{user.lname}}" class="d-none d-sm-block ms-1 text-capitalize">{{user.fname}} {{user.lname}}</strong>
+        </a>
+      </li>
+      {{!-- <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span data-toggle="tooltip" title="Add User"> <i class="fas fa-user-plus "></i></i></span>
+        </a>
+      </li> --}}
+      
+
+      </li>
+      
+      <li class="nav-item dropdown me-3 me-lg-1">
+        <a
+          class="nav-link dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i data-toggle="tooltip" title="Menu" class="fas fa-bars fa-lg"></i>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end "
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="/home-user">Create Profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" target="_blank" href="/admin">Log in as Admin</a>
+          </li>
+          <li>
+            <a class="dropdown-item bg-danger" style="color: white;" href="/logout">Log Out</a>
+          </li>
+        </ul>
+        
+      </li>
+      
+    </ul>
+    <!-- Right elements -->
+  </div>
+</nav>
+<!-- Navbar -->
+  </div>
+</nav>
+
+
+<div class="container-fluid" style="background: linear-gradient(90deg, rgb(216, 213, 222) 24%, rgb(246, 246, 253) 79%); height: 92vh ; overflow: hidden;">
+  <div class="row">
+    <div class="col-md-6 p-0 overflow-hidden">
+        <img style="padding: 14px; height: 93vh;" src="/images/Gaming-Wallpaper-Free-Download.png" alt="" srcset="">
+    </div>
+    <div class="col-md-6">
+
+      <div class="pt-5">
+        <h2 class="d-flex justify-content-center text-capitalize">Welcome Back,&nbsp;<span
+            style="color: rgb(8, 203, 8);">{{user.fname}} {{user.lname}}</span></h2>
+        <h2 class="d-flex justify-content-center ">Create Your Gaming Profile</h2>
+        <section>
+          <div class="container-fluid m-o py-5 mt-2" style="width: 95%;">
+            <form action="/create-profile" method="post" onsubmit="alert('Created Profile Successfully');">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-2">
+                <div class="col-md-10">
+                  <div class="form-outline">
+                    <input type="text" name="pr_gname" style="background: white;" id="form6Example1"
+                      class="form-control"  required />
+                    <label class="form-label" for="form6Example1">Gaming Name</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-outline mb-4">
+                    <input type="number" name="pr_age" style="background: white;" id="form6Example6"
+                      class="form-control" required/>
+                    <label class="form-label" for="form6Example6">Age</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Text input -->
+              <div class="form-outline mb-4">
+                <input type="text" name="pr_game" style="background: white;" id="form6Example4" class="form-control" required  />
+                <label class="form-label" for="form6Example4">Preferred Game</label>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" name="pr_email" style="background: white;" id="form6Example5"
+                  class="form-control" required />
+                <label class="form-label" for="form6Example5">Email</label>
+              </div>
+
+              <!-- selection input -->
+              {{!-- <div class=""></div> --}}
+              <select class="form-select mb-4" required name="pr_level" aria-label="Default select example" required >
+                <option value="">Select your level</option>
+                <option value="Professional">Professional</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Beginner">Beginner</option>
+              </select>
+              {{!--
+          </div>/ --}}
+          <!-- Message input -->
+          <div class="form-outline mb-4 ">
+            <textarea class="form-control" name="pr_info" style="background: white;" id="form6Example7"
+              rows="4"></textarea>
+            <label class="form-label" for="form6Example7">Additional information (Optional)</label>
+          </div>
+
+          <!-- Checkbox -->
+          {{!-- <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+            <label class="form-check-label" for="form6Example8"> Create an account? </label>
+          </div> --}}
+
+          <!-- Submit button -->
+          <button type="submit" style="background: rgb(8, 203, 8); color: white;" class="btn btn-block mb-4">Create
+            Profile</button>
+          </form>
+      </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+</div>

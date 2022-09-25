@@ -1,0 +1,63 @@
+
+<div class="pt-5" style="background: linear-gradient(90deg, rgb(216, 213, 222) 24%, rgb(246, 246, 253) 79%); height: 100vh ;">
+    <h2 class="d-flex justify-content-center ">Add New Gaming Profile</h2>
+    <section>
+        <div class="container p-5 mt-2" style="width: 60%;">
+            <form action="/admin/create-profile-admin" method="post" onsubmit="alert('Added Profile Successfully');">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-2">
+                    <div class="col-md-10" >
+                        <div class="form-outline" >
+                            <input type="text" required name="pr_gname" style="background: white;" id="form6Example1" class="form-control" />
+                            <label class="form-label"  for="form6Example1">Gaming Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-outline mb-4" >
+                            <input type="number" required name="pr_age" style="background: white;" id="form6Example6" class="form-control" />
+                            <label class="form-label" for="form6Example6">Age</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input -->
+                <div class="form-outline mb-4" >
+                    <input type="text" required name="pr_game" style="background: white;" id="form6Example4" class="form-control" />
+                    <label class="form-label" for="form6Example4">Preferred Game</label>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="email" required name="pr_email" style="background: white;" id="form6Example5" class="form-control" />
+                    <label class="form-label"  for="form6Example5">Email</label>
+                </div>
+
+                <!-- selection input -->
+                {{!-- <div class=""></div> --}}
+                <select class="form-select mb-4" required name="pr_level" aria-label="Default select example">
+                    <option  value="">Select your level</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Beginner">Beginner</option>
+                </select>
+                {{!--</div>/ --}}
+        <!-- Message input -->
+        <div class="form-outline mb-4 " >
+            <textarea class="form-control" name="pr_info" style="background: white;" id="form6Example7" rows="4"></textarea>
+            <label class="form-label" for="form6Example7">Additional information</label>
+        </div>
+
+        <!-- Checkbox -->
+        {{!-- <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+            <label class="form-check-label" for="form6Example8"> Create an account? </label>
+        </div> --}}
+
+        <!-- Submit button -->
+        <button type="submit" style="background: rgb(41, 154, 230); color: white;" class="btn btn-block mb-4">Add Profile</button>
+        </form>
+</div>
+</section>
+
+</div>

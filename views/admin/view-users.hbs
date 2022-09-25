@@ -1,0 +1,190 @@
+<nav>
+  <div>
+    <!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid justify-content-between">
+    <!-- Left elements -->
+    <div class="d-flex">
+      <!-- Brand -->
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <img
+          src="/images/DB of Games Logo.png"
+          height="30"
+          alt="MDB Logo"
+          loading="lazy"
+          style="margin-top: 2px;"
+        />
+      </a>
+
+      <!-- Search form -->
+      {{!-- <form class="input-group w-auto my-auto d-none d-sm-flex">
+        <input
+          autocomplete="off"
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          style="min-width: 125px;"
+        />
+        <span class="input-group-text border-0 d-none d-lg-flex"
+          ><i class="fas fa-search"></i
+        ></span>
+      </form> --}}
+    </div>
+    <!-- Left elements -->
+
+    <!-- Center elements -->
+    {{!-- <ul class="navbar-nav flex-row d-none d-md-flex">
+      <li class="nav-item me-3 me-lg-1 active"> 
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-home fa-lg"></i></span>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-flag fa-lg"></i></span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-video fa-lg"></i></span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-shopping-bag fa-lg"></i></span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-users fa-lg"></i></span>
+          <span class="badge rounded-pill badge-notification bg-danger">2</span>
+        </a>
+      </li>
+    </ul> --}}
+    <!-- Center elements -->
+    <h3>Admin Page</h1>
+    <!-- Right elements -->
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <img
+            data-toggle="tooltip" title="Admin Page" 
+            src="https://image.shutterstock.com/image-vector/admin-business-icon-businessman-people-260nw-2198670565.jpg"
+            class="rounded-circle"
+            height="22"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+          <strong data-toggle="tooltip" title="Admin Page" class="d-none d-sm-block ms-1">Admin</strong>
+        </a>
+      </li>
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="/admin/add-profile">
+          <span data-toggle="tooltip" title="Add User"> <i class="fas fa-user-plus "></i></i></span>
+        </a>
+      </li>
+      
+
+      </li>
+      
+      <li class="nav-item dropdown me-3 me-lg-1">
+        <a
+          class="nav-link dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i data-toggle="tooltip" title="Menu" class="fas fa-bars fa-lg"></i>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end "
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="/admin/add-profile">Add User</a>
+          </li>
+          <li>
+            <a class="dropdown-item" target="_blank" href="/">Log in as User</a>
+          </li>
+          <li>
+            <a class="dropdown-item bg-danger" style="color: white;" href="/admin/admin-logout">Log Out</a>
+          </li>
+        </ul>
+        
+      </li>
+      
+    </ul>
+    <!-- Right elements -->
+  </div>
+</nav>
+<!-- Navbar -->
+  </div>
+</nav>
+
+<div class="container">
+  
+<div class="d-flex justify-content-center fw-bold mt-3"><h2>Gamers Profile</h2></div>
+<table class="table align-middle mb-0 bg-white" id="myTable">
+  <thead class="bg-light">
+    <tr>
+      <th>Name</th>
+      <th>Game</th>
+      <th>Age</th>
+      <th>Level</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each allprofiles}}
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://i.pinimg.com/originals/3f/94/70/3f9470b34a8e3f526dbdb022f9f19cf7.jpg" alt=""
+            style="width: 45px; height: 45px" class="rounded-circle" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{this.pr_gname}}</p>
+            <p class="text-muted mb-0">{{this.pr_email}}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">{{this.pr_game}}</p>
+        {{!-- <p class="text-muted mb-0">IT department</p> --}}
+      </td>
+      <td>
+        <p class="fw-bold mb-1">{{this.pr_age}}</p>
+      </td>
+      <td>{{this.pr_level}}</td>
+      <td><a href="/admin/edit-profile/{{this._id}}">
+        <button  type="button" class="btn btn-link btn-sm btn-rounded">
+          Edit
+        </button>
+        </a>
+        <a href="/admin/delete-profile/{{this._id}}">
+        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"  onclick="return confirm('Are you sure to delete {{this.pr_gname}} details')" data-mdb-ripple-color="red"
+          style="color: red;">
+          Delete
+        </button>
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+</div>
+
+<script>
+ $(document).ready( function () {
+    $('#myTable').DataTable({
+       
+    });
+} );
+</script>
